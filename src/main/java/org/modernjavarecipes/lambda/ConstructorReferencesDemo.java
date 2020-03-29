@@ -33,19 +33,19 @@ public class ConstructorReferencesDemo {
         Person before = new Person("Grace Hopper");
         people = Stream.of(before).collect(Collectors.toList());
         Person after = people.get(0);
-        assertTrue(before == after);
+        //assertTrue(before == after);
         before.setName("Grace Murray Hopper");
-        assertEquals("Grace Murray Hopper", after.getName());
+        //assertEquals("Grace Murray Hopper", after.getName());
 
         //Using the copy constructor
         people = Stream.of(before)
                 .map(Person::new)
                 .collect(Collectors.toList());
         after = people.get(0);
-        assertFalse(before == after);
-        assertEquals(before, after);
+        //assertFalse(before == after);
+        //assertEquals(before, after);
         before.setName("Rear Admiral Dr. Grace Murray Hopper");
-        assertFalse(before.equals(after));
+        //assertFalse(before.equals(after));
 
         //Using the varargs constructor
         names.stream()

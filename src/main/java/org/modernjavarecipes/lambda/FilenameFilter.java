@@ -7,7 +7,7 @@ public class FilenameFilter {
 
     public static void main(String[] args) {
         //An anonymous inner class implementation of FilenameFilter
-        File directory1=new File("./src/java/main");
+        File directory1=new File("./src/main/java");
         String[] fileNames = directory1.list(new java.io.FilenameFilter() {
             @Override
             public boolean accept(File dir, String name) {
