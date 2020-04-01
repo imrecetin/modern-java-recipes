@@ -1,4 +1,4 @@
-package org.modernjavarecipes.suppliers;
+package org.modernjavarecipes.functions;
 
 import java.util.Arrays;
 import java.util.List;
