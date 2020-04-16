@@ -1,4 +1,4 @@
-package org.modernjavarecipes;
+package org.modernjavarecipes.issueswithStreamsLambdasMethodReferences;
 
 import java.math.BigInteger;
 import java.util.Arrays;

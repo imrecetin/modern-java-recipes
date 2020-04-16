@@ -1,4 +1,4 @@
-package org.modernjavarecipes;
+package org.modernjavarecipes.issueswithStreamsLambdasMethodReferences;
 
 public class DefaultMethodConflictDemo {
     public static void main(String[] args) {

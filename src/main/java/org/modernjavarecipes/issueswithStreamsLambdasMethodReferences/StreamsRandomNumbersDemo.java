@@ -1,4 +1,4 @@
-package org.modernjavarecipes;
+package org.modernjavarecipes.issueswithStreamsLambdasMethodReferences;
 
 import java.util.LinkedList;
 import java.util.List;

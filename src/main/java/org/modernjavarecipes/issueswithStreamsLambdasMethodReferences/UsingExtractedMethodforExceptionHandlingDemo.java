@@ -1,4 +1,4 @@
-package org.modernjavarecipes;
+package org.modernjavarecipes.issueswithStreamsLambdasMethodReferences;
 
 import java.util.Arrays;
 import java.util.List;
