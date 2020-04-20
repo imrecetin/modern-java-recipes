@@ -48,7 +48,7 @@ public class DefaultMethodConflictDemo {
         }
     }
 
-    public class CompanyEmployee implements Company, Employee {
+    public class CompanyEmployeeDummy implements Company, Employee {
         private String first;
         private String last;
 
@@ -65,6 +65,11 @@ public class DefaultMethodConflictDemo {
         @Override
         public String getLast() {
             return last;
+        }
+
+        @Override
+        public String getName() {
+            return null;
         }
     }
 }
