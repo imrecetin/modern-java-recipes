@@ -1,7 +1,9 @@
 package org.modernjavarecipes.generic;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class GenericDemo {
@@ -44,11 +46,43 @@ public class GenericDemo {
         int numElements = stuff.size();
 
         //Upper Bounded Wildcards
+        //A List with an upper bound
+        List<? extends Number> numbers = new ArrayList<>();
+        // numbers.add(3);
+        // numbers.add(3.14159);
+        // numbers.add(new BigDecimal("3"));
+
+        ints = Arrays.asList(1, 2, 3, 4, 5);
+        List<Double> doubles = Arrays.asList(1.0, 2.0, 3.0, 4.0, 5.0);
+        List<BigDecimal> bigDecimals = Arrays.asList(
+                new BigDecimal("1.0"),
+                new BigDecimal("2.0"),
+                new BigDecimal("3.0"),
+                new BigDecimal("4.0"),
+                new BigDecimal("5.0")
+        );
+        System.out.printf("ints sum is %s%n", sumList(ints));
+        System.out.printf("doubles sum is %s%n", sumList(doubles));
+        System.out.printf("big decimals sum is %s%n", sumList(bigDecimals));
     }
 
     //Unbounded List as a method arg
     private static void printList(List<?> list) {
         System.out.println(list);
+    }
+
+    //Using an upper bound
+    private static double sumList(List<? extends Number> list) {
+        return list.stream()
+                .mapToDouble(Number::doubleValue)
+                .sum();
+    }
+
+    //Extracting a value from an upper bound reference
+    private static double sumListExtract(List<? extends Number> list) {
+        Number num = list.get(0);
+        // ... from before ...
+        return num.doubleValue();
     }
 
 }
