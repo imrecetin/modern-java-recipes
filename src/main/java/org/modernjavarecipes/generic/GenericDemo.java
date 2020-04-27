@@ -75,6 +75,17 @@ public class GenericDemo {
         numsUpTo(5, numberList);
         numsUpTo(5, objectList);
 
+        //PECS
+        /*It means that if a parameterized type represents a producer, use
+        extends. If it represents a consumer, use super. If the parameter is both, don’t use
+        wildcards at all—the only type that satisfies both requirements is the explicit type
+        itself.*/
+
+        //The advice boils down to:
+        //• Use extends when you only get values out of a data structure
+        //• Use super when you only put values into a data structure
+        //• Use an explicit type when you plan to do both
+
 
     }
 
