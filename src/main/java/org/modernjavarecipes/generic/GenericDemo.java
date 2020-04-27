@@ -5,6 +5,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.IntStream;
 
 public class GenericDemo {
     //Java 10, known as Project Valhalla, has proposed adding primitive types to collections
@@ -64,6 +65,23 @@ public class GenericDemo {
         System.out.printf("ints sum is %s%n", sumList(ints));
         System.out.printf("doubles sum is %s%n", sumList(doubles));
         System.out.printf("big decimals sum is %s%n", sumList(bigDecimals));
+
+        //Lower Bounded Wildcards
+        //Using the numsUpTo method
+        ArrayList<Integer> integerList = new ArrayList<>();
+        ArrayList<Number> numberList = new ArrayList<>();
+        ArrayList<Object> objectList = new ArrayList<>();
+        numsUpTo(5, integerList);
+        numsUpTo(5, numberList);
+        numsUpTo(5, objectList);
+
+
+    }
+
+    //A method to populate a given list
+    public static void numsUpTo(Integer num, List<? super Integer> output) {
+        IntStream.rangeClosed(1, num)
+                .forEach(output::add);
     }
 
     //Unbounded List as a method arg
